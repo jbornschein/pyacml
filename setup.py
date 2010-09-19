@@ -4,14 +4,19 @@ from sys import argv
 from distutils.core import setup, Extension
 from Cython.Distutils import build_ext
 
+import numpy as np
+
 ##############################################################################
 
 
 if __name__ == "__main__":
+
     acml_dir='/opt/acml-4.4.0/gfortran64/'
+    #acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/'
 
+    numpy_dir=np.get_include()
 
-    include_dirs=[acml_dir+'/include']
+    include_dirs=[acml_dir+'/include', numpy_dir]
     library_dirs=[acml_dir+'/lib/']
     libraries=['acml', 'acml_mv']
 
