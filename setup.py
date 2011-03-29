@@ -11,8 +11,8 @@ import numpy as np
 
 if __name__ == "__main__":
 
-    acml_dir='/opt/acml-4.4.0/gfortran64/'
-    #acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/'
+    #acml_dir='/opt/acml-4.4.0/gfortran64/'
+    acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/'
 
     numpy_dir=np.get_include()
 
