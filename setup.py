@@ -11,8 +11,10 @@ import numpy as np
 
 if __name__ == "__main__":
 
-    #acml_dir='/opt/acml-4.4.0/gfortran64/'
-    acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/'
+    # ACML installation path:
+    #acml_dir='/opt/acml-4.4.0/gfortran64/'            # default 
+    #acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/' # FUCHS / CSC
+    acml_dir='/home/bernstein-pul/software/acml4.4.0/gfortran64/'  # FIAS 
 
     numpy_dir=np.get_include()
 
