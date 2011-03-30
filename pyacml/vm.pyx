@@ -2,7 +2,7 @@
 import numpy as np
 cimport numpy as np
 
-
+# ACML vector  functions 
 cdef extern from "acml_mv.h":
     int vrda_sin(int n, double a[], double y[])
     int vrda_cos(int n, double a[], double y[])

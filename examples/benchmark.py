@@ -21,14 +21,13 @@ if __name__ == "__main__":
         ("log10", "np.log10(a)", "pyacml.log10(a)"),
     ]
    
-
     print 
     print " Running function on vector of size 1,000,000...."
     print
     print "   Function | NumPy time| ACML time | Speedup "
     print "------------+-----------+-----------+---------"
 
-    setup = "import numpy as np; import pyacml; a = np.linspace(0, 100, 1000000)"
+    setup = "import numpy as np; import pyacml; a = np.linspace(1, 100, 1000000)"
     for name, np_func, acml_func in ufuncs64:
         t_np = timeit(np_func, setup=setup, number=10)
         t_acml = timeit(acml_func, setup=setup, number=10)
