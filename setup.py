@@ -7,18 +7,24 @@ from Cython.Distutils import build_ext
 
 import numpy as np
 
-##############################################################################
+#============================================================================
+# Main
 
-
-if __name__ == "__main__":
-
-    # ACML installation path:
+def find_acml():
     if 'ACML_PATH' in environ:
         acml_dir=environ['ACML_PATH']
     else:
         print "Warning: ACML_PATH environment variable not found. Assuming installation in /opt/acml/"
         acml_dir='/opt/acml/'            # default 
+    return acml_dir
 
+#============================================================================
+# Main
+
+if __name__ == "__main__":
+
+    # ACML installation path:
+    acml_dir=find_acml()
     numpy_dir=np.get_include()
 
     include_dirs=[acml_dir+'/include', numpy_dir]
