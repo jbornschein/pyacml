@@ -22,6 +22,9 @@ build:
 install: build
 	python setup.py install
 
+test: build
+	python tests/tests.py
+
 clean:
 	python setup.py clean
 	rm -Rf build
