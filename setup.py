@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from sys import argv
+from os import environ
 from distutils.core import setup, Extension
 from Cython.Distutils import build_ext
 
@@ -12,9 +13,11 @@ import numpy as np
 if __name__ == "__main__":
 
     # ACML installation path:
-    #acml_dir='/opt/acml-4.4.0/gfortran64/'            # default 
-    #acml_dir='/cm/shared/apps/acml/4.3.0/gfortran64/' # FUCHS / CSC
-    acml_dir='/home/bernstein-pul/software/acml4.4.0/gfortran64/'  # FIAS 
+    if 'ACML_PATH' in environ:
+        acml_dir=environ['ACML_PATH']
+    else:
+        print "Warning: ACML_PATH environment variable not found. Assuming installation in /opt/acml/"
+        acml_dir='/opt/acml/'            # default 
 
     numpy_dir=np.get_include()
 
