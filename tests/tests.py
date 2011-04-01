@@ -32,7 +32,7 @@ class TestVectorFuncs(unittest.TestCase):
             self.assertEqual(arr.shape, out.shape, msg="Failed for %s" % acml_func)
 
     def test_allclose(self):
-        arr = np.linspace(1, 100, 1000)
+        arr = np.linspace(0, 100, 1000)
         for np_func, acml_func in self.vector_funcs:
             np_out = np_func(arr)
             acml_out = acml_func(arr)
